@@ -14,16 +14,21 @@ document.querySelectorAll('.nav-pill').forEach(pill => {
 
 // 2. GUIDE MODAL LOGIC (Only runs if element exists)
 if (overlay && okBtn) {
-    if (sessionStorage.getItem('guideSeen') === 'true') {
+    if (sessionStorage.getItem('guideSeen') !== 'true') {
+        overlay.style.display = 'flex';
+    } else {
         overlay.classList.add('hidden');
     }
+
     okBtn.onclick = () => {
         overlay.style.opacity = '0';
         sessionStorage.setItem('guideSeen', 'true');
-        setTimeout(() => overlay.classList.add('hidden'), 500);
+        setTimeout(() => {
+            overlay.classList.add('hidden');
+            overlay.style.display = 'none';
+        }, 500);
     };
 }
-
 // 3. DRAG LOGIC
 document.querySelectorAll('.nav-pill').forEach(pill => {
     pill.onmousedown = (e) => {
