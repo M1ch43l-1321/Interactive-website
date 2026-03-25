@@ -4,7 +4,7 @@ const okBtn = document.getElementById('ok-btn');
 let proxy = null;
 let targetUrl = "";
 
-// 1. SMART HIGHLIGHTING: Highlight the pill that matches the current URL
+//  Highlights the navpill that the page is on.
 const currentPath = window.location.pathname.split("/").pop() || "index.html";
 document.querySelectorAll('.nav-pill').forEach(pill => {
     if (pill.getAttribute('data-target') === currentPath) {
@@ -12,7 +12,7 @@ document.querySelectorAll('.nav-pill').forEach(pill => {
     }
 });
 
-// 2. GUIDE MODAL LOGIC (Only runs if element exists)
+//  Makes hte pop up only pop up once and hides it on click.
 if (overlay && okBtn) {
     if (sessionStorage.getItem('guideSeen') !== 'true') {
         overlay.style.display = 'flex';
@@ -29,10 +29,10 @@ if (overlay && okBtn) {
         }, 500);
     };
 }
-// 3. DRAG LOGIC
+// How dragging the pills works. it creates a fake element that the user drags and once dropped in the big square it goes to that page.
 document.querySelectorAll('.nav-pill').forEach(pill => {
     pill.onmousedown = (e) => {
-        // Prevent drag if guide is still visible
+        // Prevent drag if pop up is still visible.
         if (overlay && !overlay.classList.contains('hidden')) return;
 
         targetUrl = pill.getAttribute('data-target');
