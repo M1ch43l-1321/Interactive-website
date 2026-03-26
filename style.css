@@ -17,7 +17,7 @@ body, html {
     user-select: none;
 }
 
-/* NAVIGATION */
+/* Nav stuff */
 #nav-bar {
     width: 100%;
     height: 120px;
@@ -55,7 +55,7 @@ body, html {
 
 .nav-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Auto-highlight class applied by JS */
+/* Auto-highlight class using js */
 .nav-pill.active-page {
     border-color: var(--accent); 
     background: rgba(0, 242, 255, 0.1); 
@@ -75,7 +75,6 @@ body, html {
 .logo-accent { opacity: 0.3; color: #fff; }
 .brand-logo:hover { transform: scale(1.1); text-shadow: 0 0 25px var(--accent); }
 
-/* WORKSPACE */
 #workspace {
     flex: 1; 
     margin: 20px 40px 40px;
@@ -105,7 +104,6 @@ body, html {
     border-radius: 8px;
 }
 
-/* GUIDE OVERLAY (Index only) */
 #guide-overlay {
     position: fixed; inset: 0;
     background: rgba(0, 0, 0, 0.95);
