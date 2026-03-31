@@ -29,10 +29,10 @@ if (overlay && okBtn) {
         }, 500);
     };
 }
-// How dragging the pills works. it creates a fake element that the user drags and once dropped in the big square it goes to that page.
+// How dragging the pills works. it creates a fake element that the user drags and once dropped in the big square it goes to that page. Your basically just dragging a link to a box.
 document.querySelectorAll('.nav-pill').forEach(pill => {
     pill.onmousedown = (e) => {
-        // Prevent drag if pop up is still visible.
+
         if (overlay && !overlay.classList.contains('hidden')) return;
 
         targetUrl = pill.getAttribute('data-target');
